@@ -10,7 +10,9 @@ export function ProjectsSection() {
     'Desktop application for managing library inventory, built with C# and Windows Forms.',
     image:
     'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['C#', 'WinForms', 'SQL']
+    tags: ['C#', 'WinForms', 'SQL'],
+    githubUrl: 'https://github.com/yourusername/library-management-v1',
+    demoUrl: '#'
   },
   {
     id: 2,
@@ -19,7 +21,9 @@ export function ProjectsSection() {
     'Web-based library system with improved UI and user authentication.',
     image:
     'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['Django', 'Python', 'Bootstrap']
+    tags: ['Django', 'Python', 'Bootstrap'],
+    githubUrl: 'https://github.com/yourusername/library-management-v2',
+    demoUrl: 'https://library-demo.herokuapp.com'
   },
   {
     id: 3,
@@ -28,7 +32,9 @@ export function ProjectsSection() {
     'Advanced library management with reporting and analytics features.',
     image:
     'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['C#', 'ASP.NET', 'SQL Server']
+    tags: ['C#', 'ASP.NET', 'SQL Server'],
+    githubUrl: 'https://github.com/yourusername/library-management-v3',
+    demoUrl: '#'
   },
   {
     id: 4,
@@ -37,7 +43,9 @@ export function ProjectsSection() {
     'Informational portal for university campus activities and news.',
     image:
     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['HTML', 'CSS', 'JS']
+    tags: ['HTML', 'CSS', 'JS'],
+    githubUrl: 'https://github.com/yourusername/campus-website',
+    demoUrl: 'https://campus-website.netlify.app'
   },
   {
     id: 5,
@@ -46,7 +54,9 @@ export function ProjectsSection() {
     'Personal finance application to track daily expenses and income.',
     image:
     'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['Django', 'SQL', 'Bootstrap']
+    tags: ['Django', 'SQL', 'Bootstrap'],
+    githubUrl: 'https://github.com/yourusername/budget-tracker',
+    demoUrl: 'https://budget-tracker-demo.herokuapp.com'
   },
   {
     id: 6,
@@ -55,7 +65,9 @@ export function ProjectsSection() {
     'Internal tool for tracking IT support tickets and hardware inventory.',
     image:
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['C#', 'SQL Server']
+    tags: ['C#', 'SQL Server'],
+    githubUrl: 'https://github.com/yourusername/it-support-dashboard',
+    demoUrl: '#'
   }];
 
   return (
@@ -117,12 +129,20 @@ export function ProjectsSection() {
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
               
                 <div className="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
                     <Github size={18} />
-                  </button>
-                  <button className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
+                  </a>
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
                     <ExternalLink size={18} />
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -147,7 +167,9 @@ export function ProjectsSection() {
 
                 <div className="mt-6">
                   <a
-                  href="#"
+                  href={project.demoUrl !== '#' ? project.demoUrl : `/project/${project.id}`}
+                  target={project.demoUrl !== '#' ? "_blank" : "_self"}
+                  rel={project.demoUrl !== '#' ? "noopener noreferrer" : undefined}
                   className="text-amber-600 hover:text-amber-700 text-sm font-semibold flex items-center gap-1">
                   
                     Read more <ExternalLink size={14} />

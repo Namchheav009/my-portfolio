@@ -60,11 +60,12 @@ export function HeroSection() {
                 Contact Me
               </a>
               <a
-                href="#"
+                href ="/public/cv.pdf"
+                download="Ron_Namchheav.pdf"
                 className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-md flex items-center gap-2">
                 
                 <Download size={18} />
-                View My Resume
+                Download CV
               </a>
             </div>
           </motion.div>

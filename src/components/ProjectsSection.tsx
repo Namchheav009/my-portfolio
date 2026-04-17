@@ -9,9 +9,9 @@ export function ProjectsSection() {
     description:
     'Desktop application for managing library inventory, built with C# and Windows Forms.',
     image:
-    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'media/library3.png',
     tags: ['C#', 'WinForms', 'SQL'],
-    githubUrl: 'https://github.com/yourusername/library-management-v1',
+    githubUrl: 'https://github.com/Rattnakvisal/Library-Management-system',
     demoUrl: '#'
   },
   {

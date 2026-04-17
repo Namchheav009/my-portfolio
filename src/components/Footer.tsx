@@ -15,21 +15,21 @@ export function Footer() {
 
           <div className="flex space-x-6 mb-6 md:mb-0">
             <a
-              href="#"
+              href="https://github.com/Namchheav009?tab=overview&from=2026-03-01&to=2026-03-31"
               className="text-teal-400 hover:text-amber-500 transition-colors">
               
               <span className="sr-only">GitHub</span>
               <Github size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/ron-namchheav-008942389/"
               className="text-teal-400 hover:text-amber-500 transition-colors">
               
               <span className="sr-only">LinkedIn</span>
               <Linkedin size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61572841971892"
               className="text-teal-400 hover:text-amber-500 transition-colors">
               
               <span className="sr-only">Facebook</span>

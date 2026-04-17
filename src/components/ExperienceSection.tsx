@@ -115,7 +115,7 @@ export function ExperienceSection() {
             href="#"
             className="inline-block bg-teal-900 hover:bg-teal-800 text-white px-8 py-3 rounded-md font-medium transition-colors shadow-md">
             
-            View Full Resume
+            View Full CV
           </a>
         </div>
       </div>

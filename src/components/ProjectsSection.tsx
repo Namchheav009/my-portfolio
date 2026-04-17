@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  tags: string[];
+  githubUrl: string;
+  demoUrl: string;
+};
+
 export function ProjectsSection() {
   const projects = [
   {
     id: 1,
     title: 'Library Management System v1',
     description:
-    'Desktop application for managing library inventory, built with C# and Windows Forms.',
-    image:
-    'media/library3.png',
-    tags: ['C#', 'WinForms', 'SQL'],
+    'Using ASP.NET MVC, this project is a comprehensive library management system that allows users to manage books, members, and borrowing transactions efficiently. It features a user-friendly interface and robust backend functionality.',
+    images: [
+      'media/library/library1.png',
+      'media/library/library2.png',
+      'media/library/library3.png'
+    ],
+    tags: ['C#','jQuery','CSS','ASP.NET','JavaScript', 'SQL'],
     githubUrl: 'https://github.com/Rattnakvisal/Library-Management-system',
     demoUrl: '#'
   },
@@ -19,8 +33,11 @@ export function ProjectsSection() {
     title: 'Library Management System v2',
     description:
     'Web-based library system with improved UI and user authentication.',
-    image:
+    images: [
     'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    ],
     tags: ['Django', 'Python', 'Bootstrap'],
     githubUrl: 'https://github.com/yourusername/library-management-v2',
     demoUrl: 'https://library-demo.herokuapp.com'
@@ -30,8 +47,11 @@ export function ProjectsSection() {
     title: 'Library Management System v3',
     description:
     'Advanced library management with reporting and analytics features.',
-    image:
+    images: [
     'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    ],
     tags: ['C#', 'ASP.NET', 'SQL Server'],
     githubUrl: 'https://github.com/yourusername/library-management-v3',
     demoUrl: '#'
@@ -41,8 +61,11 @@ export function ProjectsSection() {
     title: 'Project Campus Website',
     description:
     'Informational portal for university campus activities and news.',
-    image:
+    images: [
     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    ],
     tags: ['HTML', 'CSS', 'JS'],
     githubUrl: 'https://github.com/yourusername/campus-website',
     demoUrl: 'https://campus-website.netlify.app'
@@ -52,8 +75,11 @@ export function ProjectsSection() {
     title: 'Budget Tracker App',
     description:
     'Personal finance application to track daily expenses and income.',
-    image:
+    images: [
     'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    ],
     tags: ['Django', 'SQL', 'Bootstrap'],
     githubUrl: 'https://github.com/yourusername/budget-tracker',
     demoUrl: 'https://budget-tracker-demo.herokuapp.com'
@@ -63,12 +89,35 @@ export function ProjectsSection() {
     title: 'IT Support Dashboard',
     description:
     'Internal tool for tracking IT support tickets and hardware inventory.',
-    image:
+    images: [
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    ],
     tags: ['C#', 'SQL Server'],
     githubUrl: 'https://github.com/yourusername/it-support-dashboard',
     demoUrl: '#'
   }];
+
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    if (activeProject) {
+      setCurrentImageIndex((prev) => (prev + 1) % activeProject.images.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (activeProject) {
+      setCurrentImageIndex((prev) => (prev - 1 + activeProject.images.length) % activeProject.images.length);
+    }
+  };
+
+  const openProjectModal = (project: Project) => {
+    setActiveProject(project);
+    setCurrentImageIndex(0);
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
@@ -124,7 +173,7 @@ export function ProjectsSection() {
               <div className="relative h-48 overflow-hidden bg-teal-900">
                 <div className="absolute inset-0 bg-teal-900/40 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
                 <img
-                src={project.image}
+                src={project.images[0]}
                 alt={project.title}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
               
@@ -133,13 +182,14 @@ export function ProjectsSection() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
                     <Github size={18} />
                   </a>
                   <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveProject(project); }}
+                    role="button"
                     className="p-2 bg-white/90 rounded-full text-teal-900 hover:text-amber-500 hover:bg-white transition-colors">
                     <ExternalLink size={18} />
                   </a>
@@ -167,11 +217,10 @@ export function ProjectsSection() {
 
                 <div className="mt-6">
                   <a
-                  href={project.demoUrl !== '#' ? project.demoUrl : `/project/${project.id}`}
-                  target={project.demoUrl !== '#' ? "_blank" : "_self"}
-                  rel={project.demoUrl !== '#' ? "noopener noreferrer" : undefined}
-                  className="text-amber-600 hover:text-amber-700 text-sm font-semibold flex items-center gap-1">
-                  
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); openProjectModal(project); }}
+                    role="button"
+                    className="text-amber-600 hover:text-amber-700 text-sm font-semibold flex items-center gap-1">
                     Read more <ExternalLink size={14} />
                   </a>
                 </div>
@@ -180,6 +229,99 @@ export function ProjectsSection() {
           )}
         </div>
       </div>
+
+      {activeProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-dialog-title"
+          onClick={() => setActiveProject(null)}>
+          <div
+            className="w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+            onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
+              <div>
+                <h3 id="project-dialog-title" className="text-xl font-semibold text-teal-900">
+                  {activeProject.title}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">Project details and demo preview</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveProject(null)}
+                className="rounded-full bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-200">
+                Close
+              </button>
+            </div>
+            <div className="px-6 py-6 sm:px-8">
+              <div className="relative mb-6">
+                <img
+                  src={activeProject.images[currentImageIndex]}
+                  alt={activeProject.title}
+                  className="h-56 w-full rounded-3xl object-cover" />
+                {activeProject.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-teal-900 hover:bg-white shadow-lg transition-colors">
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-teal-900 hover:bg-white shadow-lg transition-colors">
+                      <ChevronRight size={20} />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      {activeProject.images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`h-2 w-2 rounded-full transition-colors ${
+                            index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+              <p className="text-gray-700">{activeProject.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {activeProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold text-teal-800">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={activeProject.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-teal-900 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-800">
+                  View GitHub
+                </a>
+                {activeProject.demoUrl !== '#' ? (
+                  <a
+                    href={activeProject.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full border border-teal-900 px-4 py-2 text-sm font-semibold text-teal-900 hover:bg-teal-50">
+                    Open demo in new tab
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-500">
+                    Demo unavailable
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>);
 
 }

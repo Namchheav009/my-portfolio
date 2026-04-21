@@ -23,20 +23,20 @@ export function ExperienceSection() {
   {
     id: 2,
     role: 'IT Support Intern',
-    company: 'University of Business',
+    company: 'ACLEDA University of Business',
     period: 'Dec 2025 - Jan 2026',
     description:
-    'Set up Windows environments, configured operating systems, and managed network printers.',
+    'Set up Windows environments, configured operating systems, and managed network printers, support students and teachers.',
     icon: <Server size={20} className="text-white" />
   },
 
   {
     id: 4,
     role: 'Digital Marketer & Salesperson',
-    company: 'Freelance / Contract',
+    company: 'Product 3 PLus',
     period: '2024 (8 months)',
     description:
-    'Managed digital marketing campaigns and handled sales responsibilities.',
+    'Managed digital marketing campaigns and handled sales responsibilities, especially in managing social media platforms and engaging with customers. ',
     icon: <Briefcase size={20} className="text-white" />
   }];
 

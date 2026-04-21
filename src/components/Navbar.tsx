@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  const navLinks = [
+
+const navLinks = [
   {
     name: 'Home',
     href: '#home'
@@ -34,7 +25,49 @@ export function Navbar() {
   {
     name: 'Contact',
     href: '#contact'
-  }];
+  }
+];
+
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('#home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      const navbarOffset = 120;
+      const scrollPosition = window.scrollY + navbarOffset;
+      const pageBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+
+      if (pageBottom) {
+        setActiveLink(navLinks[navLinks.length - 1].href);
+        return;
+      }
+
+      let currentLink = navLinks[0].href;
+      navLinks.forEach((link) => {
+        const section = document.getElementById(link.href.substring(1));
+        if (section && section.offsetTop <= scrollPosition) {
+          currentLink = link.href;
+        }
+      });
+
+      setActiveLink(currentLink);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   return (
     <nav
@@ -57,7 +90,8 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-amber-500 transition-colors text-sm font-medium">
+              onClick={() => setActiveLink(link.href)}
+              className={`text-sm font-medium transition-colors ${activeLink === link.href ? 'text-amber-500' : 'text-gray-300'} hover:text-amber-500`}>
               
                 {link.name}
               </a>
@@ -90,8 +124,8 @@ export function Navbar() {
           <a
             key={link.name}
             href={link.href}
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-amber-500 hover:bg-teal-700 rounded-md">
+            onClick={() => { setActiveLink(link.href); setMobileMenuOpen(false); }}
+            className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${activeLink === link.href ? 'text-amber-500 bg-teal-700' : 'text-gray-300'} hover:text-amber-500 hover:bg-teal-700`}>
             
                 {link.name}
               </a>

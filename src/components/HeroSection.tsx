@@ -41,7 +41,7 @@ export function HeroSection() {
               RON NAMCHHEAV
             </h1>
             <h2 className="text-xl md:text-2xl font-medium text-gray-600 mb-6">
-              software developer
+              software developer & IT support specialist
             </h2>
 
             <p className="text-gray-600 mb-8 max-w-lg leading-relaxed">
@@ -92,7 +92,7 @@ export function HeroSection() {
 
             <div className="relative z-10 text-center">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                My Coding Journey:
+                My Coding :
               </h3>
               <h4 className="text-2xl md:text-3xl text-amber-500 font-semibold mb-8">
                 Ron Namchheav
@@ -107,6 +107,18 @@ export function HeroSection() {
                     <p className="font-medium">Desktop & Web Apps</p>
                     <p className="text-sm text-gray-300">
                       ASP.NET & Windows Forms
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 bg-teal-800/50 p-4 rounded-xl backdrop-blur-sm border border-teal-700">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    tsx
+                  </div>
+                  <div>
+                    <p className="font-medium">Frontend Development</p>
+                    <p className="text-sm text-gray-300">
+                      Typescript, Tailwind CSS, Framer Motion
                     </p>
                   </div>
                 </div>
@@ -130,10 +142,23 @@ export function HeroSection() {
                   <div>
                     <p className="font-medium">Database Management</p>
                     <p className="text-sm text-gray-300">
-                      SQL Server Architecture
+                      SQL Server Architecture and Queries 
                     </p>
                   </div>
                 </div>
+
+                {/* <div className="flex items-center gap-4 bg-teal-800/50 p-4 rounded-xl backdrop-blur-sm border border-teal-700">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
+                    IT
+                  </div>
+                  <div>
+                    <p className="font-medium">IT Operations</p>
+                    <p className="text-sm text-gray-300">
+                      Windows Environments & Network Support
+                    </p>
+                  </div>
+                </div> */}
+
               </div>
             </div>
           </motion.div>

@@ -16,7 +16,7 @@ export function ProjectsSection() {
   const projects = [
   {
     id: 1,
-    title: 'Library Management System v1',
+    title: 'Library Management System',
     description:
     'Using ASP.NET MVC, this project is a comprehensive library management system that allows users to manage books, members, and borrowing transactions efficiently. It features a user-friendly interface and robust backend functionality.',
     images: [
@@ -30,59 +30,59 @@ export function ProjectsSection() {
   },
   {
     id: 2,
-    title: 'Library Management System v2',
+    title: 'Expense Tracker Web App',
     description:
-    'Web-based library system with improved UI and user authentication.',
+    'A personal finance & expense tracking web application built with Laravel 12 (PHP 8.2) and React + Inertia (TypeScript). It enables users to track transactions, create budgets, categorize spending, and manage multiple users (admin role).',
     images: [
-    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    'media/expense/1.png',
+    'media/expense/2.png',
+    'media/expense/3.png'
     ],
-    tags: ['Django', 'Python', 'Bootstrap'],
-    githubUrl: 'https://github.com/yourusername/library-management-v2',
-    demoUrl: 'https://library-demo.herokuapp.com'
+    tags: ['Laravel', 'CSS', 'PHP', 'TypeScript', 'Supabase'],
+    githubUrl: 'https://github.com/Namchheav009/Expenses_tracker',
+    demoUrl: 'https://expenses-tracker-1-2d9m.onrender.com/'
   },
   {
     id: 3,
-    title: 'Library Management System v3',
+    title: 'Login_secure-flutter',
     description:
-    'Advanced library management with reporting and analytics features.',
+    'This project is a secure login system built with Flutter, utilizing Firebase for authentication and MySQL for data storage. It provides a robust and user-friendly interface for users to register, log in, otp verification, and manage their accounts securely. ',
     images: [
     'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
-    tags: ['C#', 'ASP.NET', 'SQL Server'],
-    githubUrl: 'https://github.com/yourusername/library-management-v3',
+    tags: ['Flutter', 'Firebase', 'SQLite', 'Dart'],
+    githubUrl: 'https://github.com/Namchheav009/Login_secure-flutter-',
     demoUrl: '#'
   },
   {
     id: 4,
-    title: 'Project Campus Website',
+    title: 'Hotel Management System',
     description:
-    'Informational portal for university campus activities and news.',
+    'This is a simple hotel management web application built with Django. It provides functionality for guests to browse rooms, services, make reservations, manage their cart, and book services. Administrators can manage rooms, services, bookings, users, and view reports.',
     images: [
-    'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    'media/hotel/1.png',
+    'media/hotel/2.png',
+    'media/hotel/3.png'
     ],
-    tags: ['HTML', 'CSS', 'JS'],
-    githubUrl: 'https://github.com/yourusername/campus-website',
-    demoUrl: 'https://campus-website.netlify.app'
+    tags: ['Django', 'Python', 'Bootstrap', 'jQuery', 'JavaScript', 'CSS', 'HTML', 'SQLite', 'Django REST Framework', 'SweetAlert2'],
+    githubUrl: 'https://github.com/Namchheav009/django-hotel',
+    demoUrl: '#'
   },
   {
     id: 5,
-    title: 'Budget Tracker App',
+    title: 'Restuerant Menu',
     description:
-    'Personal finance application to track daily expenses and income.',
+    'A comprehensive ASP.NET Core web application for managing restaurant menus, bookings, and administrative operations.',
     images: [
-    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+    'media/menu/1.png',
+    'media/menu/2.png',
+    'media/menu/3.png'
     ],
-    tags: ['Django', 'SQL', 'Bootstrap'],
-    githubUrl: 'https://github.com/yourusername/budget-tracker',
-    demoUrl: 'https://budget-tracker-demo.herokuapp.com'
+    tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Bootstrap', 'jQuery', 'JavaScript', 'CSS', 'HTML','SignalR','Telegram Bot API'],
+    githubUrl: 'https://github.com/Namchheav009/Resturant_menu',
+    demoUrl: '#'
   },
   {
     id: 6,
@@ -91,8 +91,6 @@ export function ProjectsSection() {
     'Internal tool for tracking IT support tickets and hardware inventory.',
     images: [
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
     tags: ['C#', 'SQL Server'],
     githubUrl: 'https://github.com/yourusername/it-support-dashboard',
@@ -232,13 +230,13 @@ export function ProjectsSection() {
 
       {activeProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-dialog-title"
           onClick={() => setActiveProject(null)}>
           <div
-            className="w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+            className="flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
               <div>
@@ -254,12 +252,12 @@ export function ProjectsSection() {
                 Close
               </button>
             </div>
-            <div className="px-6 py-6 sm:px-8">
-              <div className="relative mb-6">
+            <div className="overflow-y-auto px-6 py-6 sm:px-8">
+              <div className="relative mb-6 rounded-3xl bg-gray-950">
                 <img
                   src={activeProject.images[currentImageIndex]}
                   alt={activeProject.title}
-                  className="h-56 w-full rounded-3xl object-cover" />
+                  className="h-[60vh] max-h-[680px] min-h-[320px] w-full rounded-3xl object-contain" />
                 {activeProject.images.length > 1 && (
                   <>
                     <button

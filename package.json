@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
+    "prepare-index": "node ./scripts/prepare-index.mjs",
+    "dev": "npm run prepare-index && npx vite",
+    "build": "npm run prepare-index && npx vite build",
+    "render-build": "node ./scripts/render-build.mjs",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "preview": "npx vite preview"
+    "preview": "npm run prepare-index && npx vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",

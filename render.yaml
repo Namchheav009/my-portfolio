@@ -2,8 +2,8 @@ services:
   - type: web
     runtime: static
     name: ron-namchheav-portfolio
-    buildCommand: npm install && npm run render-build
-    staticPublishPath: ./
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*

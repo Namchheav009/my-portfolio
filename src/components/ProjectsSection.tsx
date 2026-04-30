@@ -20,9 +20,9 @@ export function ProjectsSection() {
     description:
     'Using ASP.NET MVC, this project is a comprehensive library management system that allows users to manage books, members, and borrowing transactions efficiently. It features a user-friendly interface and robust backend functionality.',
     images: [
-      'dist/media/library/library1.png',
-      'dist/media/library/library2.png',
-      'dist/media/library/library3.png'
+      '/media/library/library1.png',
+      '/media/library/library2.png',
+      '/media/library/library3.png'
     ],
     tags: ['C#','jQuery','CSS','ASP.NET','JavaScript', 'SQL'],
     githubUrl: 'https://github.com/Rattnakvisal/Library-Management-system',
@@ -34,9 +34,9 @@ export function ProjectsSection() {
     description:
     'A personal finance & expense tracking web application built with Laravel 12 (PHP 8.2) and React + Inertia (TypeScript). It enables users to track transactions, create budgets, categorize spending, and manage multiple users (admin role).',
     images: [
-    'dist/media/expense/1.png',
-    'dist/media/expense/2.png',
-    'dist/media/expense/3.png'
+    '/media/expense/1.png',
+    '/media/expense/2.png',
+    '/media/expense/3.png'
     ],
     tags: ['Laravel', 'CSS', 'PHP', 'TypeScript', 'Supabase'],
     githubUrl: 'https://github.com/Namchheav009/Expenses_tracker',
@@ -48,9 +48,9 @@ export function ProjectsSection() {
     description:
     'This project is a secure login system built with Flutter, utilizing Firebase for authentication and MySQL for data storage. It provides a robust and user-friendly interface for users to register, log in, otp verification, and manage their accounts securely. ',
     images: [
-    'dist/media/login/1.png',
-    'dist/media/login/2.png',
-    'dist/media/login/3.png'
+    'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     ],
     tags: ['Flutter', 'Firebase', 'SQLite', 'Dart'],
     githubUrl: 'https://github.com/Namchheav009/Login_secure-flutter-',
@@ -62,9 +62,9 @@ export function ProjectsSection() {
     description:
     'This is a simple hotel management web application built with Django. It provides functionality for guests to browse rooms, services, make reservations, manage their cart, and book services. Administrators can manage rooms, services, bookings, users, and view reports.',
     images: [
-    'dist/media/hotel/1.png',
-    'dist/media/hotel/2.png',
-    'dist/media/hotel/3.png'
+    '/media/hotel/1.png',
+    '/media/hotel/2.png',
+    '/media/hotel/3.png'
     ],
     tags: ['Django', 'Python', 'Bootstrap', 'jQuery', 'JavaScript', 'CSS', 'HTML', 'SQLite', 'Django REST Framework', 'SweetAlert2'],
     githubUrl: 'https://github.com/Namchheav009/django-hotel',
@@ -76,9 +76,9 @@ export function ProjectsSection() {
     description:
     'A comprehensive ASP.NET Core web application for managing restaurant menus, bookings, and administrative operations.',
     images: [
-    'dist/media/menu/1.png',
-    'dist/media/menu/2.png',
-    'dist/media/menu/3.png'
+    '/media/menu/1.png',
+    '/media/menu/2.png',
+    '/media/menu/3.png'
     ],
     tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Bootstrap', 'jQuery', 'JavaScript', 'CSS', 'HTML','SignalR','Telegram Bot API'],
     githubUrl: 'https://github.com/Namchheav009/Resturant_menu',

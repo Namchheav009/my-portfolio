@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 const rootDir = resolve(__dirname, "..");
 const distDir = join(rootDir, "dist");
 const assetsDir = join(rootDir, "assets");
+const mediaDir = join(rootDir, "media");
 const distAssetsDir = join(distDir, "assets");
 const rootIndex = join(rootDir, "index.html");
 const distIndex = join(distDir, "index.html");
